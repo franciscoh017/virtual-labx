@@ -112,6 +112,7 @@ export default {
 a {
   .card {
     border-radius: 0.375rem;
+    height: 100%;
     .card-image {
       img {
         border-radius: 0.375rem 0.375rem 0 0;
