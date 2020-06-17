@@ -2,6 +2,7 @@
   <b-navbar type="is-primary">
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
+        <img src="@/assets/logo.png" alt="">
         <span class="is-size-4">VirtualLabx</span>
       </b-navbar-item>
     </template>
