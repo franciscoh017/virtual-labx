@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    
-    <router-view/>
+    <p>This shit has CI/CD</p>
+    <router-view />
   </div>
 </template>
 
