@@ -26,6 +26,7 @@
                     placeholder="Nombre de Usuario"
                     autofocus=""
                     v-model="loginForm.userName"
+                    required
                   />
                 </div>
               </div>
@@ -37,6 +38,7 @@
                     type="password"
                     placeholder="Contraseña"
                     v-model="loginForm.password"
+                    required
                   />
                 </div>
               </div>
