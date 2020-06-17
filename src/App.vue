@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p>This shit has CI/CDsS</p>
+    <p>This shit has CI/CD</p>
     <router-view />
   </div>
 </template>
