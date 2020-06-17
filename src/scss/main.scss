@@ -1,0 +1,47 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+// Set custom variables
+$emerald: #45CB85;
+$green-cyan: #2C955E;
+$maize: #FFCF56;
+$mint: #F7FFF7;
+$jet: #343434;
+
+// Derived variables
+$primary: $emerald;
+$primary-invert: $white;
+$warning: $maize;
+$warning-invert: $jet;
+
+// Setup Custom Colors
+$jet-invert: white;
+$gcyan: $green-cyan;
+$gcyan-invert: white;
+$mint-invert: $jet;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "jet":($jet, $jet-invert),
+    "gcyan": ($gcyan, $gcyan-invert),
+    "mint": ($mint, $mint-invert)
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
