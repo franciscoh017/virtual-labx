@@ -1,8 +1,21 @@
 <template>
   <div id="app">
-    <p>This shit has CI/CD</p>
-    <router-view />
+    <Navbar />
+    <router-view/>
+    <Footer />
   </div>
 </template>
+
+<script>
+import Navbar from '@/components/Navbar/Navbar.vue'
+import Footer from '@/components/Footer/Footer.vue'
+export default {
+  name: 'App',
+  components: {
+    Navbar,
+    Footer
+  }
+}
+</script>
 
 <style lang="scss" src="./scss/main.scss"></style>
