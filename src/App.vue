@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar/Navbar.vue'
-import Foot from '@/components/Foot/Foot.vue'
+import Navbar from '@/components/Layout/Navbar/Navbar.vue'
+import Foot from '@/components/Layout/Foot/Foot.vue'
 import Login from '@/components/Login/Login.vue'
 import {mapState} from 'vuex'
 export default {
