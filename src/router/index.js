@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import MyLabs from '../views/MyLabs.vue'
+import LabPractice from '../views/LabPractice.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,16 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/labs',
+    name: 'Mis Laboratorios',
+    component: MyLabs
+  },
+  {
+    path: '/labs/practices/:id',
+    name: 'Laboratorio',
+    component: LabPractice
   },
   {
     path: '/about',

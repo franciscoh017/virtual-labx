@@ -22,8 +22,7 @@ $gcyan-invert: white;
 $mint-invert: $jet;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
-$colors: (
-    "white": ($white, $black),
+$colors: ("white": ($white, $black),
     "black": ($black, $white),
     "light": ($light, $light-invert),
     "dark": ($dark, $dark-invert),
@@ -34,8 +33,7 @@ $colors: (
     "danger": ($danger, $danger-invert),
     "jet":($jet, $jet-invert),
     "gcyan": ($gcyan, $gcyan-invert),
-    "mint": ($mint, $mint-invert)
-);
+    "mint": ($mint, $mint-invert));
 
 // Links
 $link: $primary;
@@ -47,3 +45,9 @@ $footer-padding: 3rem 1.5rem 3rem;
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+#app {
+    #app-content {
+        min-height: calc(100vh - (3.25rem + 7.5rem));
+    }
+}

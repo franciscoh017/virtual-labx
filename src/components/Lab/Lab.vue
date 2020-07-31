@@ -1,5 +1,12 @@
 <template>
-  <a :href="labUrl">
+  <router-link
+    tag="a"
+    :to="{
+      path: '/labs',
+      query: {
+        code: labCode
+      }}"
+  >
     <div class="card">
       <div class="card-image">
         <figure class="image">
@@ -10,20 +17,19 @@
       </div>
       <div class="card-content has-background-jet">
         <span class="has-text-white has-text-weight-semibold">
-          {{title}}
+          {{ `${labCode} - ${title}` }}
         </span>
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: 'Lab',
   props: {
-    labUrl: {
+    labCode: {
       type: String,
-      default:"#"
     },
     imageUrl: {
       type: String,

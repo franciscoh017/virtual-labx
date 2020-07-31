@@ -17,39 +17,37 @@
             {{ errorMessage }}
           </b-message>
           <div class="box">
-            <form @submit.prevent="loginUser(loginForm)">
-              <div class="field">
-                <div class="control">
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Nombre de Usuario"
-                    autofocus=""
-                    v-model="loginForm.userName"
-                    required
-                  />
-                </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Nombre de Usuario"
+                  autofocus=""
+                  v-model="loginForm.userName"
+                  required
+                />
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input
-                    class="input"
-                    type="password"
-                    placeholder="Contraseña"
-                    v-model="loginForm.password"
-                    required
-                  />
-                </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="Contraseña"
+                  v-model="loginForm.password"
+                  required
+                />
               </div>
-              <button
-                type="submit"
-                class="button is-block is-jet is-large is-fullwidth"
-                :class="{ 'is-loading': isLoading }"
-              >
-                Iniciar Sesión <i class="fa fa-sign-in" aria-hidden="true"></i>
-              </button>
-            </form>
+            </div>
+            <button
+              class="button is-block is-jet is-large is-fullwidth"
+              :class="{ 'is-loading': isLoading }"
+              @click.prevent="loginUser(loginForm)"
+            >
+              Iniciar Sesión <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </button>
           </div>
           <p class="has-text-grey">
             <a href="../" class="has-text-white">Recuperar Contraseña</a>

@@ -27,6 +27,8 @@ export default {
     ...mapState([
       'user',
     ])
+  },
+  mounted() {
   }
 }
 </script>

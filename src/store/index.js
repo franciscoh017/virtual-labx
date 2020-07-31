@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import axios from 'axios'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist';
 
@@ -34,22 +35,43 @@ export default new Vuex.Store({
       state.user.username = null;
       state.user.isLogedIn = false;
     }
+
   },
   actions: {
-    loginUser({ commit }, user) {
+    async loginUser({ commit }, user) {
+      JSON.stringify(user);
       commit('setErrorMessage', null);
-      commit('setLoading', true);
-      if (user.userName == 'TesisUser' && user.password == 'Tesis123') {
-        commit('setUserData', user);
-        commit('setErrorMessage', null);
-      } else {
-        commit('setErrorMessage', 'Usuario o Contraseña Invalidos');
+
+      try {
+        commit('setLoading', true);
+        const response = await axios({
+          method: 'post',
+          url: `${process.env.VUE_APP_API_URL}/login`,
+          data: user
+        });
+
+        if (response.data.isCorrectUser) 
+        {
+          commit('setUserData', user);
+        } else {
+          commit('setErrorMessage', 'Usuario o Contraseña incorrectos.');
+        }
+      } catch (error) {
+        commit('setErrorMessage', 'Usuario o Contraseña incorrectos.');
+      } finally {
+        commit('setLoading', false);
       }
-      commit('setLoading', false);
+
     },
     logoutUser({ commit }) {
       commit('logout');
     }
+  },
+  getters: {
+    getPracticeUrlByOrder: (state) => (order) => {
+      const currentPractice = state.practices.find(practice => practice.order === order);
+      return currentPractice.url;
+    },
   },
   modules: {
   },
