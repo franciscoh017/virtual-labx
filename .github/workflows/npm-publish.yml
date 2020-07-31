@@ -22,6 +22,8 @@ jobs:
         node-version: '10.x'
     - run: npm install
     - run: npm run build
+      env:
+        API_URL: https://virtual-labx-api.azurewebsites.net/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
