@@ -25,7 +25,7 @@
 		},
 		computed: {
 			...mapState(['user']),
-		},
+		}
 	};
 </script>
 
