@@ -26,7 +26,6 @@
 		computed: {
 			...mapState(['user']),
 		},
-		mounted() {},
 	};
 </script>
 
