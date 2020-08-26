@@ -1,36 +1,33 @@
 <template>
-  <div id="app">
-    <div v-if="user.isLogedIn">
-      <Navbar />
-    <router-view/>
-    <Foot />
-    </div>
-    <div v-else>
-      <Login />
-    </div>
-  </div>
+	<div id="app">
+		<div v-if="user.isLogedIn">
+			<Navbar />
+			<router-view />
+			<Foot />
+		</div>
+		<div v-else>
+			<Login />
+		</div>
+	</div>
 </template>
 
 <script>
-import Navbar from '@/components/Layout/Navbar/Navbar.vue'
-import Foot from '@/components/Layout/Foot/Foot.vue'
-import Login from '@/components/Login/Login.vue'
-import {mapState} from 'vuex'
-export default {
-  name: 'App',
-  components: {
-    Navbar,
-    Foot,
-    Login
-  },
-  computed: {
-    ...mapState([
-      'user',
-    ])
-  },
-  mounted() {
-  }
-}
+	import Navbar from '@/components/Layout/Navbar/Navbar.vue';
+	import Foot from '@/components/Layout/Foot/Foot.vue';
+	import Login from '@/components/Login/Login.vue';
+	import { mapState } from 'vuex';
+	export default {
+		name: 'App',
+		components: {
+			Navbar,
+			Foot,
+			Login,
+		},
+		computed: {
+			...mapState(['user']),
+		},
+		mounted() {},
+	};
 </script>
 
 <style lang="scss" src="./scss/main.scss"></style>

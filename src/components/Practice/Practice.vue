@@ -6,7 +6,7 @@
           <p>
             <strong>Practica {{ order }}: </strong> {{ title }}
             <br />
-            <small class="has-text-grey" v-html="body"></small>
+            <small class="has-text-grey" v-html="truncateBody(body)"></small>
           </p>
           <small v-if="dueDate" :class="{ 'has-text-danger': daysTillDue <= 1 }"
             ><strong>Vence:</strong> {{ new Date(dueDate).toLocaleString() }}</small
@@ -70,6 +70,10 @@ export default {
       // Convert back to days and return
       return Math.round(difference_ms / one_day);
     },
+    truncateBody(body) {
+      const MAX = 400;
+      return body.length > MAX ? body.substring(0, MAX) + '...' : body;
+    }
   },
 };
 </script>

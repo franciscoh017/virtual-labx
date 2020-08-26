@@ -73,7 +73,7 @@
 	};
 </script>
 
-<style>
+<style scoped>
 	.section {
 		min-height: calc(100vh - (3.25rem + 33.85rem));
 	}

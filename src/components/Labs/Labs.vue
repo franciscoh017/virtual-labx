@@ -1,5 +1,5 @@
 <template>
-  <section id="labs" class="section">
+  <section id="labs" class="section pb-0">
     <h1 class="title">
       {{heading}}
     </h1>
